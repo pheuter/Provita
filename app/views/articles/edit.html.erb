@@ -17,7 +17,7 @@
   </p>
   <p>
     <%= f.label :category %><br />
-    <%= select("category", "id", @categories.map { |c| [c.title,c.id] }) %>
+    <%= select("category", "id", Category.find(:all).map { |c| [c.title, c.id] }) %>
   </p>
   <p>
     <%= f.submit 'Update' %>

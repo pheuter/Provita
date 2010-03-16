@@ -14,6 +14,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.xml
   def show
     @article = Article.find(params[:id])
+    @categories = Category.find(:all)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,7 +26,6 @@ class ArticlesController < ApplicationController
   # GET /articles/new.xml
   def new
     @article = Article.new
-    @categories = Category.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,13 +36,13 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
-    @categories = Category.find(:all)
   end
 
   # POST /articles
   # POST /articles.xml
   def create
     @article = Article.new(params[:article])
+    @article.category = Category.find(params[:category][:id])
 
     respond_to do |format|
       if @article.save
@@ -60,6 +60,7 @@ class ArticlesController < ApplicationController
   # PUT /articles/1.xml
   def update
     @article = Article.find(params[:id])
+    @article.category = Category.find(params[:category][:id])
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
