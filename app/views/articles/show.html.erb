@@ -78,10 +78,10 @@ if (el.defaultValue==el.value) el.value = ""
   <div id="mission">
     <h1 style="font-size:32px"><%= @article.title %></h1>
 		<p>&nbsp;&nbsp;&nbsp;<i style="font-size:14px;color:yellow"><%= @article.created_at.strftime('%a %d %b, %Y')%></i></p>
-		<p id="text" style="font-size:18px;color:#DCDCDC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%=@article.body%></p>
+		<p id="text" style="font-size:18px;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%=@article.body%></p>
 		<br/>
-		<i><p id="translation" style="font-size:18px;color:black"></p></i>
-		<i><p align="right" style="font-size:16px"><%=@article.author%></p></i>
+		<i><p id="translation" style="font-size:18px;color:#F5F5F5"></p></i>
+		<p align="right" style="font-size:16px"><%=@article.author%></p>
 		<br/><br/>
 		<p><a style="color:green" href="javascript:void(0);" onclick="$('#translation').show('slow');">Translation</a></p>
   <!-- end #mission --></div>
