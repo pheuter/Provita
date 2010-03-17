@@ -4,8 +4,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Provita</title>
 <%= stylesheet_link_tag 'provita' %>
-<script type="text/javascript"><!--//--><![CDATA[//><!--
-//The following function is used only where the browser doesn't understand the css (usually IE)
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("language", "1");
+google.load("jquery","1.4.2");
+
+function initialize() {
+	var text = document.getElementById("text").innerHTML;
+	google.language.detect(text, function(result) {
+		if (!result.error && result.language) {
+			google.language.translate(text, result.language, "es",
+			function(result) {
+				var translated = document.getElementById("translation");
+				if (result.translation) {
+					translated.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+result.translation;
+				}
+			});
+		}
+	});
+}
+google.setOnLoadCallback(initialize);
+
 sfHover = function() {
 	var sfEls = document.getElementById("nav").getElementsByTagName("LI");
 	for (var i=0; i<sfEls.length; i++) {
@@ -18,17 +37,14 @@ sfHover = function() {
 	}
 }
 if (window.attachEvent) window.attachEvent("onload", sfHover);
-//--><!]]>
 
-//the following clearDefault() function clears the content in each login form text field when the user clicks in the box
 function clearDefault(el) {
 if (el.defaultValue==el.value) el.value = ""
 }
-// -->
 </script>
 </head>
 
-<body class="provita" onload="$('#articles').hide();">
+<body class="provita" onload="$('#translation').hide();">
 <div id="container">
   <div id="header">
   <p id="loginHelpers"><a href="#">Apply now</a><br />
@@ -62,22 +78,21 @@ if (el.defaultValue==el.value) el.value = ""
   <div id="mission">
     <h1 style="font-size:32px"><%= @article.title %></h1>
 		<p>&nbsp;&nbsp;&nbsp;<i style="font-size:14px;color:yellow"><%= @article.created_at.strftime('%a %d %b, %Y')%></i></p>
-		<p style="font-size:18px;color:#DCDCDC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=@article.body%></p>
+		<p id="text" style="font-size:18px;color:#DCDCDC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%=@article.body%></p>
+		<br/>
+		<i><p id="translation" style="font-size:18px;color:black"></p></i>
 		<i><p align="right" style="font-size:16px"><%=@article.author%></p></i>
+		<br/><br/>
+		<p><a style="color:green" href="javascript:void(0);" onclick="$('#translation').show('slow');">Translation</a></p>
   <!-- end #mission --></div>
     <div id="updates">
     <h1>Updates</h1>
-    <h2>News</h2>
-    <img class="updatesPic" src="/images/pic1.jpg" width="69" height="52" alt="pic1" />
-    <p class="smallText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-    <h3><a href="#">more...</a> </h3>
-    <h2>News Pages</h2>
-    <img class="updatesPic" src="/images/pic2.jpg" width="69" height="52" alt="pic1" />
-    <p class="smallText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-    <h3><a href="#">more...</a> </h3>
-    <h2>News Releases</h2>
-    <img class="updatesPic" src="/images/pic3.jpg" width="69" height="52" alt="pic1" /><p class="smallText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-    <h3><a href="#">more...</a> </h3>
+		<% Update.find(:all, :order => 'created_at DESC').each do |update| %>
+    	<h2><%= update.title%></h2>
+	    <img class="updatesPic" src="<%=update.image%>" width="69" height="52" alt="pic" />
+	    <p class="smallText"><%= update.description%></p>
+		<br/><br/>
+		<% end %>
     <!-- end #updates --></div>
     <div class="clearAll"></div>
   <!-- end #mainContent --></div>

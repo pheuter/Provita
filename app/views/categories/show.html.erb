@@ -28,7 +28,7 @@ if (el.defaultValue==el.value) el.value = ""
 </script>
 </head>
 
-<body class="provita" onload="$('#articles').hide();">
+<body class="provita">
 <div id="container">
   <div id="header">
   <p id="loginHelpers"><a href="#">Apply now</a><br />
@@ -72,18 +72,13 @@ if (el.defaultValue==el.value) el.value = ""
 		<h2 align=center><a style="color:green;font-size:32px" href="/categories">All categories</a></h2>
   <!-- end #mission --></div>
     <div id="updates">
-    <h1>Updates</h1>
-    <h2>News</h2>
-    <img class="updatesPic" src="/images/pic1.jpg" width="69" height="52" alt="pic1" />
-    <p class="smallText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-    <h3><a href="#">more...</a> </h3>
-    <h2>News Pages</h2>
-    <img class="updatesPic" src="/images/pic2.jpg" width="69" height="52" alt="pic1" />
-    <p class="smallText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-    <h3><a href="#">more...</a> </h3>
-    <h2>News Releases</h2>
-    <img class="updatesPic" src="/images/pic3.jpg" width="69" height="52" alt="pic1" /><p class="smallText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-    <h3><a href="#">more...</a> </h3>
+    	<h1>Updates</h1>
+			<% Update.find(:all, :order => 'created_at DESC').each do |update| %>
+	    	<h2><%= update.title%></h2>
+		    <img class="updatesPic" src="<%=update.image%>" width="69" height="52" alt="pic" />
+		    <p class="smallText"><%= update.description%></p>
+				<br/><br/>
+			<% end %>
     <!-- end #updates --></div>
     <div class="clearAll"></div>
   <!-- end #mainContent --></div>
