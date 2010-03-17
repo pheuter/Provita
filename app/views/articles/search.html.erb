@@ -78,8 +78,8 @@ if (el.defaultValue==el.value) el.value = ""
   <div id="mainContent">
   <div id="mission">
     <h2>Search result for term <em><%= @query %></em> resulted in <%= @total_hits %> hits</h2>
-		<%= render :partial => 'article', :collection => @articles %>
-		<%= will_paginate @articles, :params => {:query => @query} %>
+    <%= render :partial => "article", :locals => { :articles => @articles } %>
+    <%= will_paginate @articles, :params => {:query => @query} %>
   <!-- end #mission --></div>
     <div id="updates">
     <h1>Updates</h1>
