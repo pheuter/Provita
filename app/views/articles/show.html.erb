@@ -69,10 +69,11 @@ if (el.defaultValue==el.value) el.value = ""
 	<% end %>
 </ul>
 <!-- end #nav -->
-        <form class="search" id="search" method="get" action="http://www.google.com/search"> 
-        <input class="searchText" name="q" type="text" size="15" maxlength=255 value="" /> 
-		<input class="searchbtn" type="submit" name="btnG" value="search" />
-    </form> 
+    <form class="search" action="/articles/search" method="post">
+		<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+		<input class="searchText" id="query" name="query" type="text" size="15" maxlength=255 value="" /> 
+		<input class="searchbtn" type="submit" name="commit" value="search" />
+    </form>
   <!-- end #navAndSearch --></div>
   <div id="mainContent">
   <div id="mission">

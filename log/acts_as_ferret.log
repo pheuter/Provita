@@ -291,3 +291,237 @@ ar_options: {}
 [category] 1 results from AR: [#<Category id: 5, title: "Fun", created_at: "2010-03-16 22:55:56", updated_at: "2010-03-16 22:55:56">]
 Query: f*
 total hits: 1, results delivered: 1
+Will use local index.
+using index in /Users/Mark/Desktop/provita/tmp/index/article
+[article] register class Article with index article
+[article] default field list for index article: [:title, :body, :author]
+Will use local index.
+using index in /Users/Mark/Desktop/provita/tmp/index/article
+[article] register class Article with index article
+[article] default field list for index article: [:title, :body, :author]
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: yay
+-->+(title:yay body:yay author:yay) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 1 results from AR: [#<Article id: 10, title: "Yay", author: "Mark Fayngersh", body: "I'm having lot and lots and lots and lots and lots ...", category_id: 5, created_at: "2010-03-16 23:38:55", updated_at: "2010-03-16 23:38:55">]
+Query: yay
+total hits: 1, results delivered: 1
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: yay
+-->+(title:yay body:yay author:yay) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 1 results from AR: [#<Article id: 10, title: "Yay", author: "Mark Fayngersh", body: "I'm having lot and lots and lots and lots and lots ...", category_id: 5, created_at: "2010-03-16 23:38:55", updated_at: "2010-03-16 23:38:55">]
+Query: yay
+total hits: 1, results delivered: 1
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: yay
+-->+(title:yay body:yay author:yay) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 1 results from AR: [#<Article id: 10, title: "Yay", author: "Mark Fayngersh", body: "I'm having lot and lots and lots and lots and lots ...", category_id: 5, created_at: "2010-03-16 23:38:55", updated_at: "2010-03-16 23:38:55">]
+Query: yay
+total hits: 1, results delivered: 1
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: yay
+-->+(title:yay body:yay author:yay) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 1 results from AR: [#<Article id: 10, title: "Yay", author: "Mark Fayngersh", body: "I'm having lot and lots and lots and lots and lots ...", category_id: 5, created_at: "2010-03-16 23:38:55", updated_at: "2010-03-16 23:38:55">]
+Query: yay
+total hits: 1, results delivered: 1
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: yay
+-->+(title:yay body:yay author:yay) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 1 results from AR: [#<Article id: 10, title: "Yay", author: "Mark Fayngersh", body: "I'm having lot and lots and lots and lots and lots ...", category_id: 5, created_at: "2010-03-16 23:38:55", updated_at: "2010-03-16 23:38:55">]
+Query: yay
+total hits: 1, results delivered: 1
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: b
+-->+(title:b body:b author:b) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 0 results from AR: []
+Query: b
+total hits: 0, results delivered: 0
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: b*
+-->+(title:b* body:b* author:b*) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 1 results from AR: [#<Article id: 8, title: "Breaking News", author: "Mark Fayngersh", body: "New site in the works!", category_id: 4, created_at: "2010-03-16 22:49:58", updated_at: "2010-03-16 22:49:58">]
+Query: b*
+total hits: 1, results delivered: 1
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: yay
+-->+(title:yay body:yay author:yay) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 1 results from AR: [#<Article id: 10, title: "Yay", author: "Mark Fayngersh", body: "I'm having lot and lots and lots and lots and lots ...", category_id: 5, created_at: "2010-03-16 23:38:55", updated_at: "2010-03-16 23:38:55">]
+Query: yay
+total hits: 1, results delivered: 1
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: y*
+-->+(title:y* body:y* author:y*) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 1 results from AR: [#<Article id: 10, title: "Yay", author: "Mark Fayngersh", body: "I'm having lot and lots and lots and lots and lots ...", category_id: 5, created_at: "2010-03-16 23:38:55", updated_at: "2010-03-16 23:38:55">]
+Query: y*
+total hits: 1, results delivered: 1
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: yay
+-->+(title:yay body:yay author:yay) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 1 results from AR: [#<Article id: 10, title: "Yay", author: "Mark Fayngersh", body: "I'm having lot and lots and lots and lots and lots ...", category_id: 5, created_at: "2010-03-16 23:38:55", updated_at: "2010-03-16 23:38:55">]
+Query: yay
+total hits: 1, results delivered: 1
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: y*
+-->+(title:y* body:y* author:y*) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 1 results from AR: [#<Article id: 10, title: "Yay", author: "Mark Fayngersh", body: "I'm having lot and lots and lots and lots and lots ...", category_id: 5, created_at: "2010-03-16 23:38:55", updated_at: "2010-03-16 23:38:55">]
+Query: y*
+total hits: 1, results delivered: 1
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: y*
+-->+(title:y* body:y* author:y*) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 1 results from AR: [#<Article id: 10, title: "Yay", author: "Mark Fayngersh", body: "I'm having lot and lots and lots and lots and lots ...", category_id: 5, created_at: "2010-03-16 23:38:55", updated_at: "2010-03-16 23:38:55">]
+Query: y*
+total hits: 1, results delivered: 1
+[article] register class Article with index article
+[article] refusing re-registration of class Article

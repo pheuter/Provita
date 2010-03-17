@@ -86,4 +86,10 @@ class ArticlesController < ApplicationController
     end
   end
   
+  def search
+    @categories = Category.find(:all)
+    @query=params[:query]
+    @total_hits = Article.total_hits(@query)
+    @articles = Article.paginate_with_ferret(@query, :page => params[:page], :per_page => 5)
+  end
 end
