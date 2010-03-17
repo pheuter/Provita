@@ -68,8 +68,7 @@ if (el.defaultValue==el.value) el.value = ""
 		<% end %>
   <!-- end #mission --></div>
     <div id="updates">
-    <h1>Updates</h1>
-    <h1>Updates</h1>
+      <h1>Updates</h1>
 		<% Update.find(:all, :order => 'created_at DESC').each do |update| %>
     	<h2><%= update.title%></h2>
 	    <img class="updatesPic" src="<%=update.image%>" width="69" height="52" alt="pic" />
