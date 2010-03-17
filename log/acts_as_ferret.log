@@ -1,0 +1,293 @@
+# Logfile created on Tue Mar 16 22:21:52 -0400 2010 by /
+Will use local index.
+using index in /Users/Mark/Desktop/provita/tmp/index/category
+[category] rebuild index with models: []
+[category] reopening index at /Users/Mark/Desktop/provita/tmp/index/category
+[category] register class Category with index category
+[category] default field list for index category: [:title]
+using index in /Users/Mark/Desktop/provita/tmp/index/article
+[article] rebuild index with models: []
+[article] reopening index at /Users/Mark/Desktop/provita/tmp/index/article
+[article] register class Article with index article
+[article] default field list for index article: [:title, :body, :author]
+using index in /Users/Mark/Desktop/provita/tmp/index/update
+[update] rebuild index with models: []
+[update] reopening index at /Users/Mark/Desktop/provita/tmp/index/update
+[update] register class Update with index update
+[update] default field list for index update: [:title, :description]
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: e
+-->+(title:e body:e author:e) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 0 results from AR: []
+Query: e
+total hits: 0, results delivered: 0
+[category] register class Category with index category
+[category] refusing re-registration of class Category
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[update] register class Update with index update
+[update] refusing re-registration of class Update
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: 3
+-->+(title:3 body:3 author:3) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 0 results from AR: []
+Query: 3
+total hits: 0, results delivered: 0
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: 3
+-->+(title:3 body:3 author:3) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 0 results from AR: []
+Query: 3
+total hits: 0, results delivered: 0
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: 3
+-->+(title:3 body:3 author:3) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 0 results from AR: []
+Query: 3
+total hits: 0, results delivered: 0
+[category] register class Category with index category
+[category] refusing re-registration of class Category
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[update] register class Update with index update
+[update] refusing re-registration of class Update
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: fun
+-->+(title:fun body:fun author:fun) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 0 results from AR: []
+Query: fun
+total hits: 0, results delivered: 0
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: yay
+-->+(title:yay body:yay author:yay) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 0 results from AR: []
+Query: yay
+total hits: 0, results delivered: 0
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>0, :page=>nil, :limit=>5}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: ya
+-->+(title:ya body:ya author:ya) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 0 results from AR: []
+Query: ya
+total hits: 0, results delivered: 0
+[category] register class Category with index category
+[category] refusing re-registration of class Category
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[update] register class Update with index update
+[update] refusing re-registration of class Update
+Will use local index.
+using index in /Users/Mark/Desktop/provita/tmp/index/article
+[article] register class Article with index article
+[article] default field list for index article: [:author, :body, :title]
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>nil, :limit=>nil}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: fun
+-->+(author:fun body:fun title:fun) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 0 results from AR: []
+Query: fun
+total hits: 0, results delivered: 0
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>nil, :limit=>nil}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: y
+-->+(author:y body:y title:y) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 0 results from AR: []
+Query: y
+total hits: 0, results delivered: 0
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>nil, :limit=>nil}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: yay
+-->+(author:yay body:yay title:yay) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 0 results from AR: []
+Query: yay
+total hits: 0, results delivered: 0
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>nil, :limit=>nil}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: ya*
+-->+(author:ya* body:ya* title:ya*) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 0 results from AR: []
+Query: ya*
+total hits: 0, results delivered: 0
+[article] rebuild index with models: [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+[article] reindexing model Article
+[article] took 0.011232 to index last 3 records. 0.0 records to go. Avg time per record: 0.003744
+[article] reindex model Article : 100.00% complete : 0.00 secs to finish
+[article] reopening index at /Users/Mark/Desktop/provita/tmp/index/article
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>nil, :limit=>nil}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: y
+-->+(author:y body:y title:y) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 0 results from AR: []
+Query: y
+total hits: 0, results delivered: 0
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>nil, :limit=>nil}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: yay
+-->+(author:yay body:yay title:yay) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 1 results from AR: [#<Article id: 10, title: "Yay", author: "Mark Fayngersh", body: "I'm having lot and lots and lots and lots and lots ...", category_id: 5, created_at: "2010-03-16 23:38:55", updated_at: "2010-03-16 23:38:55">]
+Query: yay
+total hits: 1, results delivered: 1
+index_for [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+options: {:offset=>nil, :limit=>nil}
+ar_options: {}
+[article] stored_fields: nil
+[article] query: y*
+-->+(author:y* body:y* title:y*) +(class_name:Article)
+[article] now retrieving records from AR with options: {}
+[article] 1 results from AR: [#<Article id: 10, title: "Yay", author: "Mark Fayngersh", body: "I'm having lot and lots and lots and lots and lots ...", category_id: 5, created_at: "2010-03-16 23:38:55", updated_at: "2010-03-16 23:38:55">]
+Query: y*
+total hits: 1, results delivered: 1
+Will use local index.
+using index in /Users/Mark/Desktop/provita/tmp/index/article
+[article] register class Article with index article
+[article] default field list for index article: [:author, :title, :body]
+Will use local index.
+using index in /Users/Mark/Desktop/provita/tmp/index/article
+[article] register class Article with index article
+[article] default field list for index article: [:author, :title, :body]
+Will use local index.
+using index in /Users/Mark/Desktop/provita/tmp/index/article
+[article] register class Article with index article
+[article] default field list for index article: [:author, :title, :body]
+Will use local index.
+using index in /Users/Mark/Desktop/provita/tmp/index/article
+[article] register class Article with index article
+[article] default field list for index article: [:author, :title, :body]
+Will use local index.
+using index in /Users/Mark/Desktop/provita/tmp/index/article
+[article] register class Article with index article
+[article] default field list for index article: [:author, :title, :body]
+Will use local index.
+using index in /Users/Mark/Desktop/provita/tmp/index/article
+[article] register class Article with index article
+[article] default field list for index article: [:author, :title, :body]
+Will use local index.
+using index in /Users/Mark/Desktop/provita/tmp/index/article
+[article] register class Article with index article
+[article] default field list for index article: [:author, :body, :title]
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+[article] register class Article with index article
+[article] refusing re-registration of class Article
+Will use local index.
+using index in /Users/Mark/Desktop/provita/tmp/index/article
+[article] register class Article with index article
+[article] default field list for index article: [:author, :title, :body]
+[article] rebuild index with models: [Article(id: integer, title: string, author: string, body: text, category_id: integer, created_at: datetime, updated_at: datetime)]
+[article] reindexing model Article
+[article] took 0.007829 to index last 3 records. 0.0 records to go. Avg time per record: 0.00260966666666667
+[article] reindex model Article : 100.00% complete : 0.00 secs to finish
+[article] reopening index at /Users/Mark/Desktop/provita/tmp/index/article
+using index in /Users/Mark/Desktop/provita/tmp/index/category
+[category] register class Category with index category
+[category] default field list for index category: [:title]
+[category] rebuild index with models: [Category(id: integer, title: string, created_at: datetime, updated_at: datetime)]
+[category] reindexing model Category
+[category] took 0.010116 to index last 2 records. 0.0 records to go. Avg time per record: 0.005058
+[category] reindex model Category : 100.00% complete : 0.00 secs to finish
+[category] reopening index at /Users/Mark/Desktop/provita/tmp/index/category
+using index in /Users/Mark/Desktop/provita/tmp/index/update
+[update] register class Update with index update
+[update] default field list for index update: [:description, :title]
+[update] rebuild index with models: [Update(id: integer, title: string, description: text, image: string, created_at: datetime, updated_at: datetime)]
+[update] reindexing model Update
+[update] took 0.007481 to index last 2 records. 0.0 records to go. Avg time per record: 0.0037405
+[update] reindex model Update : 100.00% complete : 0.00 secs to finish
+[update] reopening index at /Users/Mark/Desktop/provita/tmp/index/update
+Will use local index.
+using index in /Users/Mark/Desktop/provita/tmp/index/category
+[category] register class Category with index category
+[category] default field list for index category: [:title]
+index_for [Category(id: integer, title: string, created_at: datetime, updated_at: datetime)]
+options: {:offset=>nil, :limit=>nil}
+ar_options: {}
+[category] stored_fields: nil
+[category] query: f*
+-->+title:f* +(class_name:Category)
+[category] now retrieving records from AR with options: {}
+[category] 1 results from AR: [#<Category id: 5, title: "Fun", created_at: "2010-03-16 22:55:56", updated_at: "2010-03-16 22:55:56">]
+Query: f*
+total hits: 1, results delivered: 1
