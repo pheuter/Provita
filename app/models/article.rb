@@ -6,5 +6,4 @@ class Article < ActiveRecord::Base
     title
   end
   
-  disable_ferret
 end

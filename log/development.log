@@ -14960,3 +14960,22 @@ Rendering home/index
   [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles".category_id = 5) [0m
   [4;36;1mUpdate Load (0.4ms)[0m   [0;1mSELECT * FROM "updates" ORDER BY created_at DESC[0m
 Completed in 24ms (View: 17, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "articles" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "articles" [0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" ORDER BY id ASC LIMIT 1000 OFFSET 0[0m
+creating doc for class: Article-8
+Adding field author with value 'Mark Fayngersh' to index
+Adding field title with value 'Breaking News' to index
+Adding field body with value 'New site in the works!' to index
+creating doc for class: Article-9
+Adding field author with value 'Mark Fayngersh' to index
+Adding field title with value 'One day left!' to index
+Adding field body with value '...before showtime :)' to index
+creating doc for class: Article-10
+Adding field author with value 'Mark Fayngersh' to index
+Adding field title with value 'Yay' to index
+Adding field body with value 'I'm having lot and lots and lots and lots and lots and lots and lots and lots of fun!' to index
