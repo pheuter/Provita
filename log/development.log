@@ -12093,3 +12093,975 @@ Rendering home/index
   [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles".category_id = 5) [0m
   [4;36;1mUpdate Load (0.4ms)[0m   [0;1mSELECT * FROM "updates" ORDER BY created_at DESC[0m
 Completed in 21ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCategories (20100203153838)
+Migrating to CreateArticles (20100203153921)
+Migrating to CreateUpdates (20100316234602)
+Migrating to CreateTypusUsers (20100317002754)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "typus_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255) DEFAULT '' NOT NULL, "last_name" varchar(255) DEFAULT '' NOT NULL, "role" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "status" boolean DEFAULT 'f', "token" varchar(255) NOT NULL, "salt" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "preferences" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100317002754')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("articles")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("categories")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("typus_users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("updates")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-16 20:28:06) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-16 20:28:07) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-16 20:28:17) [GET]
+
+ActionController::RoutingError (No route matches "/admin" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:29:03) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+Redirected to http://localhost:3000/admin/sign_in
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/admin]
+
+
+Processing TypusController#sign_in (for 127.0.0.1 at 2010-03-16 20:29:03) [GET]
+  Parameters: {"action"=>"sign_in", "controller"=>"typus"}
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "typus_users" [0m
+Redirected to http://localhost:3000/admin/sign_up
+Completed in 4ms (DB: 1) | 302 Found [http://localhost/admin/sign_in]
+
+
+Processing TypusController#sign_up (for 127.0.0.1 at 2010-03-16 20:29:04) [GET]
+  Parameters: {"action"=>"sign_up", "controller"=>"typus"}
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "typus_users" [0m
+Rendering template within layouts/typus
+Rendering typus/sign_up
+Rendered admin/helpers/_flash_message (0.6ms)
+Rendered admin/shared/_footer (1.3ms)
+Completed in 55ms (View: 38, DB: 1) | 200 OK [http://localhost/admin/sign_up]
+
+
+Processing TypusController#sign_up (for 127.0.0.1 at 2010-03-16 20:29:10) [POST]
+  Parameters: {"typus_user"=>{"email"=>"marfay@bergen.org"}, "commit"=>"Sign up", "action"=>"sign_up", "authenticity_token"=>"RZG00Z870tXiJU2BmrU2Ul1cP5MUKh9mEwCdU+A8Xr8=", "controller"=>"typus"}
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "typus_users" [0m
+  [4;35;1mTypusUser Load (0.2ms)[0m   [0mSELECT "typus_users".id FROM "typus_users" WHERE ("typus_users"."email" = 'marfay@bergen.org') LIMIT 1[0m
+  [4;36;1mTypusUser Create (0.4ms)[0m   [0;1mINSERT INTO "typus_users" ("salt", "created_at", "crypted_password", "token", "updated_at", "role", "preferences", "last_name", "status", "first_name", "email") VALUES('d818e51f0f440510104ae415277f27882f9cbd18', '2010-03-17 00:29:10', '2686da7e9ee94c185fb21965c632d7590c285480', '4290d454d391', '2010-03-17 00:29:10', 'admin', '--- 
+:locale: en
+', '', 't', '', 'marfay@bergen.org')[0m
+Redirected to http://localhost:3000/admin
+Completed in 50ms (DB: 1) | 302 Found [http://localhost/admin/sign_up]
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:29:10) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;35;1mTypusUser Load (0.6ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.8ms)
+Rendered admin/helpers/_applications (6.4ms)
+Rendered admin/helpers/_header (0.6ms)
+Rendered admin/helpers/_login_info (1.1ms)
+Rendered admin/helpers/_flash_message (0.1ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.8ms)
+Completed in 69ms (View: 64, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing Admin::TypusUsersController#index (for 127.0.0.1 at 2010-03-16 20:29:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/typus_users"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "typus_users" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.7ms)
+Rendered admin/helpers/_search (1.9ms)
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_list (0.1ms)
+  [4;36;1mTypusUser Load (0.6ms)[0m   [0;1mSELECT "typus_users".* FROM "typus_users" ORDER BY typus_users.id ASC LIMIT 15 OFFSET 0[0m
+Rendered admin/helpers/_table_header (1.5ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.7ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 157ms (View: 139, DB: 1) | 200 OK [http://localhost/admin/typus_users]
+
+
+Processing Admin::TypusUsersController#edit (for 127.0.0.1 at 2010-03-16 20:29:18) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"admin/typus_users"}
+  [4;35;1mTypusUser Load (0.6ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mTypusUser Load (0.2ms)[0m   [0mSELECT id FROM "typus_users" WHERE (id < 1) ORDER BY id DESC LIMIT 1[0m
+  [4;36;1mTypusUser Load (0.1ms)[0m   [0;1mSELECT id FROM "typus_users" WHERE (id > 1) ORDER BY id ASC LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/resources/edit
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.9ms)
+Rendered admin/templates/_string (2.2ms)
+Rendered admin/templates/_string (1.1ms)
+Rendered admin/templates/_selector (1.2ms)
+Rendered admin/templates/_string (1.1ms)
+Rendered admin/templates/_password (1.3ms)
+Rendered admin/templates/_password (0.8ms)
+Rendered admin/templates/_selector (0.8ms)
+Rendered admin/resources/_form (30.9ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.2ms)
+Completed in 179ms (View: 161, DB: 1) | 200 OK [http://localhost/admin/typus_users/edit/1]
+
+
+Processing Admin::TypusUsersController#update (for 127.0.0.1 at 2010-03-16 20:29:30) [PUT]
+  Parameters: {"typus_user"=>{"password_confirmation"=>"[FILTERED]", "language"=>"en", "role"=>"admin", "last_name"=>"Fayngersh", "password"=>"[FILTERED]", "email"=>"marfay@bergen.org", "first_name"=>"Mark"}, "commit"=>"Save Typus user", "action"=>"update", "_method"=>"put", "authenticity_token"=>"RZG00Z870tXiJU2BmrU2Ul1cP5MUKh9mEwCdU+A8Xr8=", "id"=>"1", "controller"=>"admin/typus_users"}
+  [4;35;1mTypusUser Load (0.7ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mTypusUser Load (0.2ms)[0m   [0mSELECT "typus_users".id FROM "typus_users" WHERE ("typus_users"."email" = 'marfay@bergen.org' AND "typus_users".id <> 1) LIMIT 1[0m
+  [4;36;1mTypusUser Update (0.3ms)[0m   [0;1mUPDATE "typus_users" SET "updated_at" = '2010-03-17 00:29:30', "last_name" = 'Fayngersh', "first_name" = 'Mark', "preferences" = '--- 
+:locale: !str 
+ str: en
+ "@_rails_html_safe": false
+', "crypted_password" = '995f2aca3e2ca3acbc6d15006c0deba53eed8d0f' WHERE "id" = 1[0m
+  [4;35;1mTypusUser Load (0.3ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Redirected to http://localhost:3000/admin/typus_users/edit/1
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/admin/typus_users/update/1]
+
+
+Processing Admin::TypusUsersController#edit (for 127.0.0.1 at 2010-03-16 20:29:30) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"admin/typus_users"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;36;1mTypusUser Load (0.2ms)[0m   [0;1mSELECT id FROM "typus_users" WHERE (id < 1) ORDER BY id DESC LIMIT 1[0m
+  [4;35;1mTypusUser Load (0.1ms)[0m   [0mSELECT id FROM "typus_users" WHERE (id > 1) ORDER BY id ASC LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/resources/edit
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+Rendered admin/templates/_string (1.0ms)
+Rendered admin/templates/_string (0.9ms)
+Rendered admin/templates/_selector (0.5ms)
+Rendered admin/templates/_string (0.9ms)
+Rendered admin/templates/_password (0.7ms)
+Rendered admin/templates/_password (0.9ms)
+Rendered admin/templates/_selector (1.0ms)
+Rendered admin/resources/_form (11.5ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/helpers/_flash_message (0.1ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 50ms (View: 32, DB: 1) | 200 OK [http://localhost/admin/typus_users/edit/1]
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:29:33) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.3ms)
+Rendered admin/helpers/_applications (4.0ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (1.1ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 46ms (View: 39, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-16 20:29:36) [GET]
+  [4;35;1mCategory Load (1.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering home/index
+  [4;36;1mArticle Load (0.5ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles".category_id = 4) [0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles".category_id = 5) [0m
+  [4;36;1mUpdate Load (0.4ms)[0m   [0;1mSELECT * FROM "updates" ORDER BY created_at DESC[0m
+Completed in 32ms (View: 22, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2010-03-16 20:29:38) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mArticle Load (0.2ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 8) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/articles
+Rendering articles/show
+  [4;35;1mArticle Load (0.4ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles".category_id = 4) [0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles".category_id = 5) [0m
+  [4;35;1mUpdate Load (0.5ms)[0m   [0mSELECT * FROM "updates" ORDER BY created_at DESC[0m
+Completed in 254ms (View: 243, DB: 2) | 200 OK [http://localhost/articles/8]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-16 20:29:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-16 20:29:42) [GET]
+  [4;36;1mCategory Load (0.6ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering home/index
+  [4;35;1mArticle Load (0.4ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles".category_id = 4) [0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles".category_id = 5) [0m
+  [4;35;1mUpdate Load (0.3ms)[0m   [0mSELECT * FROM "updates" ORDER BY created_at DESC[0m
+Completed in 21ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing Admin::ArticlesController#index (for 127.0.0.1 at 2010-03-16 20:30:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/articles"}
+  [4;36;1mTypusUser Load (0.6ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "articles" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT "articles".* FROM "articles" ORDER BY articles.id ASC LIMIT 15 OFFSET 0[0m
+  [4;35;1mCategory Load (0.5ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" IN (4,5)) [0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.7ms)
+Rendered admin/shared/_feedback (1.2ms)
+Completed in 129ms (View: 108, DB: 2) | 200 OK [http://localhost/admin/articles]
+
+
+Processing Admin::ArticlesController#edit (for 127.0.0.1 at 2010-03-16 20:30:35) [GET]
+  Parameters: {"action"=>"edit", "id"=>"8", "controller"=>"admin/articles"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 8) [0m
+  [4;36;1mArticle Load (0.2ms)[0m   [0;1mSELECT id FROM "articles" WHERE (id < 8) ORDER BY id DESC LIMIT 1[0m
+  [4;35;1mArticle Load (0.1ms)[0m   [0mSELECT id FROM "articles" WHERE (id > 8) ORDER BY id ASC LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/resources/edit
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/templates/_string (2.1ms)
+Rendered admin/templates/_string (0.9ms)
+Rendered admin/templates/_text (1.1ms)
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" ORDER BY categories.id ASC[0m
+Rendered admin/resources/_form (19.2ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 57ms (View: 35, DB: 2) | 200 OK [http://localhost/admin/articles/edit/8]
+
+
+Processing Admin::ArticlesController#edit (for 127.0.0.1 at 2010-03-16 20:30:50) [GET]
+  Parameters: {"action"=>"edit", "id"=>"9", "controller"=>"admin/articles"}
+  [4;35;1mTypusUser Load (0.7ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 9) [0m
+  [4;35;1mArticle Load (0.2ms)[0m   [0mSELECT id FROM "articles" WHERE (id < 9) ORDER BY id DESC LIMIT 1[0m
+  [4;36;1mArticle Load (0.1ms)[0m   [0;1mSELECT id FROM "articles" WHERE (id > 9) ORDER BY id ASC LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/resources/edit
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/templates/_string (2.0ms)
+Rendered admin/templates/_string (0.9ms)
+Rendered admin/templates/_text (0.5ms)
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" ORDER BY categories.id ASC[0m
+Rendered admin/resources/_form (14.9ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 134ms (View: 31, DB: 2) | 200 OK [http://localhost/admin/articles/edit/9]
+
+
+Processing Admin::ArticlesController#index (for 127.0.0.1 at 2010-03-16 20:30:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/articles"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "articles" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+  [4;36;1mArticle Load (0.5ms)[0m   [0;1mSELECT "articles".* FROM "articles" ORDER BY articles.id ASC LIMIT 15 OFFSET 0[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" IN (4,5)) [0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 50ms (View: 28, DB: 2) | 200 OK [http://localhost/admin/articles]
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:30:56) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.3ms)
+Rendered admin/helpers/_applications (3.3ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.2ms)
+Completed in 114ms (View: 110, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2010-03-16 20:30:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/categories"}
+  [4;35;1mTypusUser Load (0.7ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "categories" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT "categories".* FROM "categories" ORDER BY categories.id ASC LIMIT 15 OFFSET 0[0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 41ms (View: 21, DB: 1) | 200 OK [http://localhost/admin/categories]
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:30:58) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;36;1mTypusUser Load (0.9ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.3ms)
+Rendered admin/helpers/_applications (3.3ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.5ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 34ms (View: 29, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing Admin::UpdatesController#index (for 127.0.0.1 at 2010-03-16 20:30:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/updates"}
+  [4;35;1mTypusUser Load (0.7ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "updates" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+  [4;35;1mUpdate Load (0.4ms)[0m   [0mSELECT "updates".* FROM "updates" ORDER BY updates.id ASC LIMIT 15 OFFSET 0[0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.5ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.3ms)
+Completed in 43ms (View: 23, DB: 1) | 200 OK [http://localhost/admin/updates]
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:31:01) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.3ms)
+Rendered admin/helpers/_applications (3.2ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.5ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 34ms (View: 30, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing Admin::ArticlesController#index (for 127.0.0.1 at 2010-03-16 20:31:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/articles"}
+  [4;35;1mTypusUser Load (0.6ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "articles" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.8ms)
+  [4;35;1mArticle Load (0.5ms)[0m   [0mSELECT "articles".* FROM "articles" ORDER BY articles.id ASC LIMIT 15 OFFSET 0[0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" IN (4,5)) [0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.2ms)
+Completed in 130ms (View: 29, DB: 2) | 200 OK [http://localhost/admin/articles]
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:31:06) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;35;1mTypusUser Load (0.7ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.3ms)
+Rendered admin/helpers/_applications (3.3ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 34ms (View: 29, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2010-03-16 20:31:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/categories"}
+  [4;36;1mTypusUser Load (0.6ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "categories" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT "categories".* FROM "categories" ORDER BY categories.id ASC LIMIT 15 OFFSET 0[0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.5ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 40ms (View: 20, DB: 1) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#edit (for 127.0.0.1 at 2010-03-16 20:31:11) [GET]
+  Parameters: {"action"=>"edit", "id"=>"4", "controller"=>"admin/categories"}
+  [4;35;1mTypusUser Load (0.7ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT id FROM "categories" WHERE (id < 4) ORDER BY id DESC LIMIT 1[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT id FROM "categories" WHERE (id > 4) ORDER BY id ASC LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/resources/edit
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.8ms)
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/templates/_string (1.9ms)
+Rendered admin/resources/_form (5.0ms)
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE (category_id is NULL) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "articles" WHERE ("articles".category_id = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles".category_id = 4) ORDER BY articles.id ASC LIMIT 15 OFFSET 0[0m
+Rendered admin/helpers/_table_header (0.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.2ms)
+Completed in 62ms (View: 40, DB: 2) | 200 OK [http://localhost/admin/categories/edit/4]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2010-03-16 20:31:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/categories"}
+  [4;36;1mTypusUser Load (0.8ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "categories" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT "categories".* FROM "categories" ORDER BY categories.id ASC LIMIT 15 OFFSET 0[0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.5ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 41ms (View: 21, DB: 1) | 200 OK [http://localhost/admin/categories]
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:32:30) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;35;1mTypusUser Load (0.7ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.3ms)
+Rendered admin/helpers/_applications (3.5ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.5ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 34ms (View: 30, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing Admin::ArticlesController#index (for 127.0.0.1 at 2010-03-16 20:32:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/articles"}
+  [4;36;1mTypusUser Load (0.8ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "articles" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+  [4;36;1mArticle Load (0.5ms)[0m   [0;1mSELECT "articles".* FROM "articles" ORDER BY articles.id ASC LIMIT 15 OFFSET 0[0m
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" IN (4,5)) [0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.5ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.2ms)
+Completed in 49ms (View: 28, DB: 2) | 200 OK [http://localhost/admin/articles]
+
+
+Processing Admin::ArticlesController#index (for 127.0.0.1 at 2010-03-16 20:32:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/articles"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "articles" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT "articles".* FROM "articles" ORDER BY articles.id ASC LIMIT 15 OFFSET 0[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" IN (4,5)) [0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 129ms (View: 27, DB: 2) | 200 OK [http://localhost/admin/articles]
+
+
+Processing Admin::ArticlesController#index (for 127.0.0.1 at 2010-03-16 20:32:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/articles"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "articles" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT "articles".* FROM "articles" ORDER BY articles.id ASC LIMIT 15 OFFSET 0[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" IN (4,5)) [0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.5ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.5ms)
+Completed in 48ms (View: 28, DB: 2) | 200 OK [http://localhost/admin/articles]
+
+
+Processing Admin::CategoriesController#edit (for 127.0.0.1 at 2010-03-16 20:32:50) [GET]
+  Parameters: {"action"=>"edit", "id"=>"4", "controller"=>"admin/categories"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT id FROM "categories" WHERE (id < 4) ORDER BY id DESC LIMIT 1[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT id FROM "categories" WHERE (id > 4) ORDER BY id ASC LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/resources/edit
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/templates/_string (1.7ms)
+Rendered admin/resources/_form (4.2ms)
+  [4;36;1mArticle Load (0.2ms)[0m   [0;1mSELECT * FROM "articles" WHERE (category_id is NULL) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "articles" WHERE ("articles".category_id = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles".category_id = 4) ORDER BY articles.id ASC LIMIT 15 OFFSET 0[0m
+Rendered admin/helpers/_table_header (0.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.2ms)
+Completed in 137ms (View: 37, DB: 2) | 200 OK [http://localhost/admin/categories/edit/4]
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:32:54) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;35;1mTypusUser Load (0.6ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.3ms)
+Rendered admin/helpers/_applications (3.2ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 33ms (View: 29, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2010-03-16 20:32:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/categories"}
+  [4;36;1mTypusUser Load (0.6ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "categories" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.8ms)
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT "categories".* FROM "categories" ORDER BY categories.id ASC LIMIT 15 OFFSET 0[0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.7ms)
+Rendered admin/shared/_feedback (1.6ms)
+Completed in 126ms (View: 107, DB: 1) | 200 OK [http://localhost/admin/categories]
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:32:57) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;35;1mTypusUser Load (0.6ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.3ms)
+Rendered admin/helpers/_applications (3.3ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.7ms)
+Rendered admin/shared/_feedback (1.2ms)
+Completed in 35ms (View: 30, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing Admin::ArticlesController#index (for 127.0.0.1 at 2010-03-16 20:32:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/articles"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "articles" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (1.0ms)
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT "articles".* FROM "articles" ORDER BY articles.id ASC LIMIT 15 OFFSET 0[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" IN (4,5)) [0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.5ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 49ms (View: 28, DB: 2) | 200 OK [http://localhost/admin/articles]
+
+
+Processing Admin::ArticlesController#new (for 127.0.0.1 at 2010-03-16 20:33:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/articles"}
+  [4;36;1mTypusUser Load (0.6ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/resources/new
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/templates/_string (1.9ms)
+Rendered admin/templates/_string (0.8ms)
+Rendered admin/templates/_text (0.5ms)
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" ORDER BY categories.id ASC[0m
+Rendered admin/resources/_form (14.9ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 52ms (View: 33, DB: 1) | 200 OK [http://localhost/admin/articles/new]
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:35:31) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;36;1mTypusUser Load (0.6ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.3ms)
+Rendered admin/helpers/_applications (3.3ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.5ms)
+Rendered admin/shared/_footer (0.7ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 34ms (View: 30, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing Admin::ArticlesController#new (for 127.0.0.1 at 2010-03-16 20:35:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/articles"}
+  [4;35;1mTypusUser Load (0.7ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/resources/new
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/templates/_string (2.1ms)
+Rendered admin/templates/_string (0.8ms)
+Rendered admin/templates/_text (0.6ms)
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" ORDER BY categories.id ASC[0m
+Rendered admin/resources/_form (16.0ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.2ms)
+Completed in 51ms (View: 31, DB: 1) | 200 OK [http://localhost/admin/articles/new]
+
+
+Processing Admin::CategoriesController#new (for 127.0.0.1 at 2010-03-16 20:35:40) [GET]
+  Parameters: {"action"=>"new", "selected"=>"category_id", "controller"=>"admin/categories", "back_to"=>"/admin/articles/new"}
+  [4;35;1mTypusUser Load (0.7ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/resources/new
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_display_link_to_previous (0.8ms)
+Rendered admin/templates/_string (1.6ms)
+Rendered admin/resources/_form (4.8ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.4ms)
+Completed in 50ms (View: 28, DB: 1) | 200 OK [http://localhost/admin/categories/new?back_to=%2Fadmin%2Farticles%2Fnew&selected=category_id]
+
+
+Processing Admin::CategoriesController#create (for 127.0.0.1 at 2010-03-16 20:35:44) [POST]
+  Parameters: {"category"=>{"title"=>"beut"}, "commit"=>"Create Category", "action"=>"create", "authenticity_token"=>"RZG00Z870tXiJU2BmrU2Ul1cP5MUKh9mEwCdU+A8Xr8=", "selected"=>"category_id", "controller"=>"admin/categories", "back_to"=>"/admin/articles/new"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mCategory Create (0.4ms)[0m   [0mINSERT INTO "categories" ("created_at", "title", "updated_at") VALUES('2010-03-17 00:35:45', 'beut', '2010-03-17 00:35:45')[0m
+Redirected to http://localhost:3000/admin/articles/new?category_id=6
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/admin/categories/create?back_to=%2Fadmin%2Farticles%2Fnew&selected=category_id]
+
+
+Processing Admin::ArticlesController#new (for 127.0.0.1 at 2010-03-16 20:35:45) [GET]
+  Parameters: {"action"=>"new", "category_id"=>"6", "controller"=>"admin/articles"}
+  [4;36;1mTypusUser Load (0.6ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/resources/new
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/templates/_string (0.9ms)
+Rendered admin/templates/_string (0.9ms)
+Rendered admin/templates/_text (0.5ms)
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" ORDER BY categories.id ASC[0m
+Rendered admin/resources/_form (13.6ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/helpers/_flash_message (0.1ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 48ms (View: 27, DB: 1) | 200 OK [http://localhost/admin/articles/new?category_id=6]
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:35:52) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;36;1mTypusUser Load (0.9ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.3ms)
+Rendered admin/helpers/_applications (3.4ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.2ms)
+Completed in 120ms (View: 116, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2010-03-16 20:35:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/categories"}
+  [4;35;1mTypusUser Load (0.7ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "categories" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.8ms)
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT "categories".* FROM "categories" ORDER BY categories.id ASC LIMIT 15 OFFSET 0[0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.5ms)
+Completed in 43ms (View: 22, DB: 1) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#destroy (for 127.0.0.1 at 2010-03-16 20:35:56) [GET]
+  Parameters: {"action"=>"destroy", "id"=>"6", "controller"=>"admin/categories"}
+  [4;36;1mTypusUser Load (0.6ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 6) [0m
+  [4;36;1mCategory Destroy (0.4ms)[0m   [0;1mDELETE FROM "categories" WHERE "id" = 6[0m
+Redirected to http://localhost:3000/admin/categories
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/admin/categories/destroy/6]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2010-03-16 20:35:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/categories"}
+  [4;35;1mTypusUser Load (0.6ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "categories" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT "categories".* FROM "categories" ORDER BY categories.id ASC LIMIT 15 OFFSET 0[0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/helpers/_flash_message (0.1ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.3ms)
+Completed in 122ms (View: 22, DB: 1) | 200 OK [http://localhost/admin/categories]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2010-03-16 20:35:59) [GET]
+  Parameters: {"action"=>"index", "sort_order"=>"desc", "controller"=>"admin/categories", "search"=>"c"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "categories" WHERE ((LOWER(title) LIKE '%c%')) [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+Rendered admin/helpers/_remove_filter_link (0.8ms)
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT "categories".* FROM "categories" WHERE ((LOWER(title) LIKE '%c%')) ORDER BY categories.id ASC LIMIT 15 OFFSET 0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "categories" [0m
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 42ms (View: 21, DB: 1) | 200 OK [http://localhost/admin/categories?search=c&sort_order=desc]
+
+
+Processing Admin::CategoriesController#index (for 127.0.0.1 at 2010-03-16 20:36:01) [GET]
+  Parameters: {"action"=>"index", "sort_order"=>"desc", "controller"=>"admin/categories", "search"=>"fu"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "categories" WHERE ((LOWER(title) LIKE '%fu%')) [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (1.1ms)
+Rendered admin/helpers/_remove_filter_link (0.3ms)
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT "categories".* FROM "categories" WHERE ((LOWER(title) LIKE '%fu%')) ORDER BY categories.id ASC LIMIT 15 OFFSET 0[0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 122ms (View: 103, DB: 1) | 200 OK [http://localhost/admin/categories?search=fu&sort_order=desc]
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:36:02) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;35;1mTypusUser Load (0.7ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.3ms)
+Rendered admin/helpers/_applications (3.5ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.5ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 35ms (View: 30, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing Admin::UpdatesController#index (for 127.0.0.1 at 2010-03-16 20:36:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/updates"}
+  [4;36;1mTypusUser Load (0.7ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "updates" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (0.1ms)
+Rendered admin/helpers/_search (0.7ms)
+  [4;36;1mUpdate Load (0.3ms)[0m   [0;1mSELECT "updates".* FROM "updates" ORDER BY updates.id ASC LIMIT 15 OFFSET 0[0m
+Rendered admin/helpers/_table_header (0.1ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 41ms (View: 22, DB: 1) | 200 OK [http://localhost/admin/updates]
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:36:19) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;35;1mTypusUser Load (0.6ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.3ms)
+Rendered admin/helpers/_applications (3.3ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 116ms (View: 112, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-16 20:36:20) [GET]
+  [4;36;1mCategory Load (0.8ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering home/index
+  [4;35;1mArticle Load (0.5ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles".category_id = 4) [0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles".category_id = 5) [0m
+  [4;35;1mUpdate Load (0.5ms)[0m   [0mSELECT * FROM "updates" ORDER BY created_at DESC[0m
+Completed in 29ms (View: 20, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-16 20:37:16) [GET]
+  [4;36;1mCategory Load (0.6ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering home/index
+  [4;35;1mArticle Load (0.4ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles".category_id = 4) [0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles".category_id = 5) [0m
+  [4;35;1mUpdate Load (0.3ms)[0m   [0mSELECT * FROM "updates" ORDER BY created_at DESC[0m
+Completed in 20ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-03-16 20:37:18) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mCategory Load (0.6ms)[0m   [0;1mSELECT * FROM "categories" [0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+Rendering template within layouts/categories
+Rendering categories/show
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles".category_id = 4) [0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles".category_id = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles".category_id = 4) [0m
+  [4;35;1mUpdate Load (0.4ms)[0m   [0mSELECT * FROM "updates" ORDER BY created_at DESC[0m
+Completed in 32ms (View: 24, DB: 2) | 200 OK [http://localhost/categories/4]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-16 20:37:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2010-03-16 20:37:19) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mArticle Load (0.2ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 9) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/articles
+Rendering articles/show
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles".category_id = 4) [0m
+  [4;35;1mArticle Load (0.4ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles".category_id = 5) [0m
+  [4;36;1mUpdate Load (0.4ms)[0m   [0;1mSELECT * FROM "updates" ORDER BY created_at DESC[0m
+Completed in 23ms (View: 13, DB: 2) | 200 OK [http://localhost/articles/9]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-16 20:37:19) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2010-03-16 20:37:26) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 10) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/articles
+Rendering articles/show
+  [4;35;1mArticle Load (0.4ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles".category_id = 4) [0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles".category_id = 5) [0m
+  [4;35;1mUpdate Load (0.4ms)[0m   [0mSELECT * FROM "updates" ORDER BY created_at DESC[0m
+Completed in 23ms (View: 12, DB: 2) | 200 OK [http://localhost/articles/10]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-16 20:37:26) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TypusController#dashboard (for 127.0.0.1 at 2010-03-16 20:37:39) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;36;1mTypusUser Load (0.6ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.3ms)
+Rendered admin/helpers/_applications (3.5ms)
+Rendered admin/helpers/_header (0.1ms)
+Rendered admin/helpers/_login_info (0.6ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.2ms)
+Completed in 113ms (View: 109, DB: 1) | 200 OK [http://localhost/admin]

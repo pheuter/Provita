@@ -1,0 +1,34 @@
+# Typus Models Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+Article:
+  fields:
+    list: title, author, category
+    form: title, author, body, category
+  order_by: 
+  relationships: category
+  filters: 
+  search: title
+  application: provita
+
+Category:
+  fields:
+    list: title
+    form: title
+  order_by: 
+  relationships: articles
+  filters: 
+  search: title
+  application: provita
+
+Update:
+  fields:
+    list: title, image
+    form: title, description, image
+  order_by: 
+  relationships: 
+  filters: 
+  search: title
+  application: provita
+
